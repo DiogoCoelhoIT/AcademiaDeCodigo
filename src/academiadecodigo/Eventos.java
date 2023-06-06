@@ -19,11 +19,12 @@ public class Eventos {
             c.findMoney();
         }
            else if(rng == 7) {
-            if (c.getWalletMoney() <= 0) {
+            int lossMoney = (int) (Math.random() * 500);
+            if (c.getWalletMoney() <= 0 || c.getWalletMoney()-lossMoney < 0) {
                 System.out.println("A bandit tried to rob you but failed, because you dont have money!");
             } else {
 
-                int lossMoney = (int) (Math.random() * 500);
+
                 c.spendMoney(lossMoney);
                 System.out.println(c.getName() + " fell into the floor and loss " + lossMoney + "€");
             }
@@ -31,7 +32,7 @@ public class Eventos {
             else
         {
             if (c.getWalletMoney() <= 0) {
-                System.out.println("You fell like running!");
+                System.out.println("You feel like running!");
             } else
             new rockPaperScissor(c,sc);
         }

@@ -8,7 +8,7 @@ public class Roulette {
 
     public int launchBall()
     {int x = (int)(Math.random()*37);
-        System.out.println("The Ball is ROLLING!\nThe ball hitted number "+ x);
+        System.out.println("The Ball is ROLLING!\nThe ball landed on the number "+ x);
        return x;
     }
     private boolean isODD(int x)
@@ -69,6 +69,7 @@ public class Roulette {
         while(play) {
             System.out.println("Welcome to the game of the roullete!\n(0)Choose a number between 0-36\n(1)Bet on 1st 12\n(2)Bet on 2nd 12\n(3)Bet on 3rd 12\n" +
                     "(4)Bet on 1-18\n(5)Bet on 19-36\n(6)Bet on EVEN number\n(7)Bet on ODD Number\n(8)Bet on Black\n(9)Bet on Red\n(10)Dont Play");
+            client.checkMoney();
             int ball;
             int pick = sc.nextInt();
             sc.nextLine();

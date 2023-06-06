@@ -11,8 +11,8 @@ public class rockPaperScissor {
     {
         this.c = c;
         this.sc = sc;
-        bet = (int)(c.getWalletMoney() / 10);
-        reward = (int)(c.getWalletMoney() / 5);
+        bet = (c.getWalletMoney() / 10);
+        reward = (c.getWalletMoney() / 5);
         startGame();
     }
 

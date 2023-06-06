@@ -7,10 +7,11 @@ public class Client {
     private String name;
     private Wallet wallet;
     private Eventos eventos;
+    Scanner sc;
 
-    public Client(String name, Scanner sc)
-    {
+    public Client(String name, Scanner sc) {
         this.name = name;
+        this.sc = sc;
         wallet = new Wallet(this);
         eventos = new Eventos(this, sc);
     }
@@ -20,21 +21,30 @@ public class Client {
         System.out.println("Found " + x + "€");
         saveMoney(x);
     }
-    public void explore()
-    {
+
+    public void explore() {
         eventos.generateEvent();
     }
-    private void saveMoney(int x)
-    {
+
+    private void saveMoney(int x) {
         wallet.addBalance(x);
     }
-    public void depositMoney(Bank bank, int x)
-    {
-            if(wallet.getBalance() >= x) {
-                bank.depositMoney(x);
-            }
-            wallet.lessBalance(x);
 
+    public void depositMoney(Bank bank, int x) {
+        if (wallet.getBalance() >= x) {
+            bank.depositMoney(x);
+        }
+        wallet.lessBalance(x);
+
+    }
+
+    public void goToBank(Bank b) {
+        b.welcomeToBank(sc);
+    }
+
+    public void goToCasino(Casino c)
+    {
+        c.goToCasino();
     }
     public void spendMoney(int x)
     {
@@ -67,6 +77,6 @@ public class Client {
     }
     public void checkMoney()
     {
-        System.out.println(name + "has "+ getWalletMoney()+"€ on his Wallet!");
+        System.out.println(name + " has "+ getWalletMoney()+"€ on his Wallet!");
     }
 }

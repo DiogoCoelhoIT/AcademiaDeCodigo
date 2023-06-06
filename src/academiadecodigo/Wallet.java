@@ -2,8 +2,6 @@ package academiadecodigo;
 
 public class Wallet {
 
-    //jogador pede dinehri ao banco, o banco da dinheiro ao cliente e o cliente mete dinherio na carteira
-
     private int balance;
     private int limit;
     private Client client;
